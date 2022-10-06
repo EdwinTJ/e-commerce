@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar, Sidebar, Footer } from "./components";
+import styled from "styled-components";
 
+const Button = styled.button`
+  background: green;
+  color: white;
+`;
+const Container = styled.div`
+  background: red;
+  color: white;
+  .hero {
+  }
+`;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h4>comfy sloth starter</h4>
+      <Button>Click me</Button>
+      <Container>
+        <div>
+          <h3>Hello world</h3>
+        </div>
+        <div className="hero">hero text</div>
+      </Container>
     </div>
   );
 }
