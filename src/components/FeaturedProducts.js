@@ -30,7 +30,7 @@ const FeaturedProducts = () => {
         })}
       </div>
       <Link to="/products" className="btn">
-        all products
+        All Products
       </Link>
     </Wrapper>
   );
