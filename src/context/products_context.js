@@ -12,7 +12,6 @@ import {
   GET_SINGLE_PRODUCT_SUCCESS,
   GET_SINGLE_PRODUCT_ERROR,
 } from "../actions";
-import { type } from "@testing-library/user-event/dist/type";
 
 const initialState = {
   isSidebarOpen: false,
@@ -37,7 +36,7 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
-  const fetchproduct = async (url) => {
+  const fetchProducts = async (url) => {
     dispatch({ type: GET_PRODUCTS_BEGIN });
     try {
       const response = await axios.get(url);
@@ -58,9 +57,11 @@ export const ProductsProvider = ({ children }) => {
       dispatch({ type: GET_SINGLE_PRODUCT_ERROR });
     }
   };
+
   useEffect(() => {
-    fetchproduct(url);
+    fetchProducts(url);
   }, []);
+
   return (
     <ProductsContext.Provider
       value={{ ...state, openSidebar, closeSidebar, fetchSingleProduct }}
