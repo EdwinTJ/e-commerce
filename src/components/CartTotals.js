@@ -14,23 +14,24 @@ const CartTotals = () => {
       <div>
         <article>
           <h5>
-            Subtotal: <span>{formatPrice(total_amount)}</span>
+            subtotal : <span>{formatPrice(total_amount)}</span>
           </h5>
           <p>
-            Shipping fee: <span>{formatPrice(shipping_fee)}</span>
+            shipping fee : <span>{formatPrice(shipping_fee)}</span>
           </p>
           <hr />
           <h4>
-            Order Total: <span>{formatPrice(total_amount + shipping_fee)}</span>
+            order total :{" "}
+            <span>{formatPrice(total_amount + shipping_fee)}</span>
           </h4>
         </article>
         {myUser ? (
-          <Link to="/chekout" className="btn">
-            Proceed To Checkout
+          <Link to="/checkout" className="btn">
+            proceed to checkout
           </Link>
         ) : (
-          <button type="button" onClick={loginWithRedirect} className="btn">
-            Login
+          <button type="button" className="btn" onClick={loginWithRedirect}>
+            login
           </button>
         )}
       </div>
