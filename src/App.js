@@ -34,6 +34,7 @@ function App() {
               </PrivateRoute>
             }
           />
+          <Route element={<Error />} />
         </Routes>
         <Footer />
       </Router>
